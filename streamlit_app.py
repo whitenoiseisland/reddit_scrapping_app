@@ -37,9 +37,9 @@ reddit = praw.Reddit(
 st.title("Top Posts from a Subreddit")
 
 # Input for subreddit
-subreddit_name = st.text_input("Enter the subreddit name:", "")
+subreddit_name = st.text_input("Enter the subreddit name:", "", key="subreddit_input")
 
-if st.button("Fetch and Save Top Posts"):
+if st.button("Fetch and Save Top Posts") or (subreddit_name and st.session_state.get("subreddit_input")):
     st.write(f"Fetching top posts from r/{subreddit_name} in the past 24 hours...")
 
     subreddit = reddit.subreddit(subreddit_name)
