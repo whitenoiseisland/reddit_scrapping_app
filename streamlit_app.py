@@ -3,7 +3,7 @@ import praw
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Hide the fork and GitHub icons
+# Hide the fork, GitHub icon, and app creator avatar
 st.set_page_config(
     page_title="Top Posts from a Subreddit",
     page_icon=":shark:",
@@ -11,13 +11,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS to hide the Fork label and GitHub icon
+# Custom CSS to hide the Fork label, GitHub icon, and app creator avatar
 hide_style = """
 <style>
 [data-testid="stToolbarActionButtonLabel"] {
     display: none;
 }
 [data-testid="stToolbarActionButtonIcon"] {
+    display: none;
+}
+[data-testid="appCreatorAvatar"] {
     display: none;
 }
 </style>
