@@ -3,7 +3,7 @@ import praw
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Hide the fork, GitHub icon, and app creator avatar
+# Hide the fork label, GitHub icon, and app creator avatar
 st.set_page_config(
     page_title="Top Posts from a Subreddit",
     page_icon=":shark:",
