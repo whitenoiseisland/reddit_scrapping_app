@@ -6,10 +6,23 @@ from datetime import datetime, timedelta
 # Hide the fork and GitHub icons
 st.set_page_config(
     page_title="Top Posts from a Subreddit",
-    page_icon=":shark:",  # You can change this icon to whatever you prefer
-    layout="centered",  # or "wide" if you want a wider layout
+    page_icon=":shark:",
+    layout="centered",
     initial_sidebar_state="expanded"
 )
+
+# Custom CSS to hide the Fork label and GitHub icon
+hide_style = """
+<style>
+[data-testid="stToolbarActionButtonLabel"] {
+    display: none;
+}
+[data-testid="stToolbarActionButtonIcon"] {
+    display: none;
+}
+</style>
+"""
+st.markdown(hide_style, unsafe_allow_html=True)
 
 # Initialize Reddit API
 reddit = praw.Reddit(
