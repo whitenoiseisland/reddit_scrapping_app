@@ -3,6 +3,14 @@ import praw
 import pandas as pd
 from datetime import datetime, timedelta
 
+# Hide the fork and GitHub icons
+st.set_page_config(
+    page_title="Top Posts from a Subreddit",
+    page_icon=":shark:",  # You can change this icon to whatever you prefer
+    layout="centered",  # or "wide" if you want a wider layout
+    initial_sidebar_state="expanded"
+)
+
 # Initialize Reddit API
 reddit = praw.Reddit(
     client_id=st.secrets["reddit"]["client_id"],
